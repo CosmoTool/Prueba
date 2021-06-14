@@ -1,0 +1,245 @@
+ 
+
+*****************************************************************************************
+ Start time: Fri May 28 13:50:05 2021
+ 
+   Number of cores:             64
+   Number of rows:               8
+   Number of columns:            8
+ 
+
+*****************************************************************************************
+ Loading configuration from: NSide64/TEB.ini
+ 
+                       Data_Folder:   NSide64
+                             NSide:   64          
+                 Fiducial_FileName:   ModeloDl_PlanckTodos.dat
+            Lmax_Covariance_Matrix:   128         
+               Lmax_Power_Spectrum:   128         
+                  Type_of_Analysis:   0           
+ 
+                     Maps_FileName:   MapasTQU.fits
+                    Number_of_Maps:   5000        
+                      Pixel_Window:   1           
+                         Beam_FWHM:   131.922678213788   
+ 
+           Intensity_Mask_FileName:   MascaraSateliteN64.fits
+             Intensity_Mask_NumMap:   1           
+        Polarization_Mask_FileName:   MascaraSateliteN64.fits
+          Polarization_Mask_NumMap:   1           
+ 
+                     Kind_of_Noise:   0           
+                    Intensity_Noise:  4.548120000000000E-002  
+                Polarization_Noise:   4.548120000000000E-002  
+                Remove_Noise_Biass:   1           
+ 
+        Matrices_Cyclic_Block_Size:   677         
+ Inverse_Covariance_Matrix_Control:   1           
+             Show_Memory_Allocated:   1           
+               Healpix_Data_Folfer:   /global/homes/j/jdbilbao/Descargas/Healpix_3.70/data/
+
+*****************************************************************************************
+  Loading masks
+ 
+   Number of observed pixels in temperature:                                        29009
+   Number of observed pixels in polarization:                                       29009
+ 
+  Loading HEALPix Pixel Window
+ 
+  Loading Fiducial Power Spectrum
+
+*****************************************************************************************
+
+
+  Step 1. Computing the covariance matrix
+ 
+    Computing the blocks of the spherical harmonics matrix                             1s
+                                                                                 35.96 GB
+     Block YTT done                                                                    2s
+     Block YPP done                                                                    8s
+ 
+    Computing blocks of Y S Y^H                                                        8s
+                                                                                 92.39 GB
+     Block TT done                     59 s
+     Block TQ done                    109 s
+     Block QT done                    111 s
+     Block TU done                    176 s
+     Block UT done                    177 s
+     Block QQ done                    277 s
+     Block QU done                    378 s
+     Block UQ done                    379 s
+     Block UU done                    480 s
+ 
+  Covariance matrix already computed
+                                                                                 56.43 GB
+
+*****************************************************************************************
+
+
+  Step 2. Inverting the covariance matrix                                            480s
+                                                                                112.86 GB
+ 
+    Cholesky factorization:      0                                                   753s
+    Inversion result:            0                                                  1185s
+                                                                                 56.43 GB
+    Diagonal product:   0.999999562713852     
+    Diagonal sum:        87026.9999995631     
+    Matrix size:             87027
+ 
+  Covariance matrix inverted                                                        1189s
+                                                                                 56.43 GB
+
+*****************************************************************************************
+
+
+  Step 3. Computing Yl
+ 
+    Computing the blocks of the spherical harmonics matrix 
+                                                                                 92.39 GB
+     Block YTT done                                                                 1191s
+     Block YPP done                                                                 1196s
+ 
+    Loading maps 
+                                                                                 95.63 GB
+    Computing C^-1 Maps                                                             1329s
+ 
+     <m^t C^-1 m>:    87023.5409424186     
+     Matrix size:         87027
+ 
+    Computing Yl                                                                    1434s
+                                                                                 99.35 GB
+    Maps transformed to harmonis space
+ 
+  Yl-Auto already computed                                                          1605s
+                                                                                 92.39 GB
+
+*****************************************************************************************
+
+
+  Step 4. Computing product C^-1 Y
+ 
+   Moving from matrix C^-1 to blocks of the matrix C^-1                             1605s
+                                                                                130.01 GB
+    TT
+    TQ
+    TU
+    QQ
+    QU
+    UU
+ 
+   Matrix C^-1 moved to blocks                                                      1608s
+                                                                                 73.58 GB
+   Computing blocks of the product C^-1 Y
+ 
+    Real part                                                                       1608s
+                                                                                105.94 GB
+     TT                   1636 s
+     TE                   1687 s
+     TB                   1739 s
+     QT                   1769 s
+     QE                   1823 s
+     QB                   1877 s
+     UT                   1907 s
+     UE                   1965 s
+     UB                   2022 s
+ 
+    Imaginary part                                                                  2022s
+                                                                                120.32 GB
+     TT                   2050 s
+     TE                   2102 s
+     TB                   2154 s
+     QT                   2183 s
+     QE                   2237 s
+     QB                   2291 s
+     UT                   2321 s
+     UE                   2378 s
+     UB                   2436 s
+ 
+  Blocks of product C^-1 Y already computed                                         2436s
+                                                                                 64.72 GB
+
+*****************************************************************************************
+
+
+  Step 5. Computing Bl                                                              2436s
+ 
+  Bl already computed
+ 
+
+*****************************************************************************************
+
+
+  Step 6. Computing the Fisher matrix
+ 
+   Moving blocks of C^-1 Y to complex form                                          2439s
+ 
+   Computing blocks of the harmonic matrix in complex form
+   and multiplications Y^H (C^-1 Y)
+ 
+    Computing block TT of Y in complex form                                         2439s
+    Computing blocks TT, TE and TB of Y^H C^-1 Y                                    2441s
+                                                                                 69.91 GB
+    TT                   2492 s
+    TE                   2543 s
+    TB                   2594 s
+ 
+    Computing blocks QE, QB, UE y UB of Y in complex form                           2594s
+    Computing blocks EE, BB and EB of Y^H C^-1 Y                                    2600s
+                                                                                 82.28 GB
+    EE                   2700 s
+    BB                   2801 s
+    EB                   2901 s
+                                                                                 24.75 GB
+ 
+   Moving blocks to real and imaginary part                                         2901s
+ 
+   Building transposed blocks                                                       2902s
+ 
+   Computing blocks of the Fisher matrix
+ 
+    TTTT 
+    EEEE
+    BBBB
+    TTEE
+    TTBB
+    EEBB
+    TTTE
+    TTTB
+    TTEB
+    EETE
+    EETB
+    EEEB
+    BBTE
+    BBTB
+    BBEB
+    TETE
+    TETB
+    TEEB
+    TBTB
+    TBEB
+    EBEB
+ 
+    Blocks of the Fisher matrix already computed                   2905 s
+ 
+    Saving the Fisher matrix
+ 
+  Fisher matrix already computed                                                    2923s
+                                                                                  0.28 KB
+
+
+*****************************************************************************************
+ Computing the power spectrum
+ 
+  Loading Fisher matrix
+  Inverting Fisher matrix
+  Cholesky factorization:            0
+  Inversion result:                  0
+  Loading Bl
+  Loading YlTotal
+  Computing Dl
+  Saving Dl
+ 
+ Elapsed time:                   3059
+ End: Fri May 28 14:41:04 2021
+
+*****************************************************************************************
